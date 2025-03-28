@@ -29,24 +29,22 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-///////////////////////////////////////
-const header = document.querySelector('.header');
+//Scrolling
 
-//Creating and inserting element
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-// message.textContent = 'We use cookied for improved functionality and analytics.';
-message.innerHTML =
-  'We use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
-  // header.prepend(message);
-  header.append(message);
-  // header.append(message.cloneNode(true));
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
-// header.before(message);
-// header.after(message);
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
 
-//Delete 
+  //Scrolling
+  // window.scrollTo(s1coords.left + window.pageXOffset, s1coords.top + window.pageYOffset);
 
-document.querySelector('.btn--close-cookie').addEventListener('click', function(){
-  message.remove();
+  // window.scrollTo({
+  //   top: s1coords.top + window.pageYOffset,
+  //   left: s1coords.left + window.pageXOffset,
+  //   behavior: 'smooth'
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
 })
