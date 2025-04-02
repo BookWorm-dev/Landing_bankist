@@ -241,3 +241,4 @@ const slider = function () {
 };
 slider();
 //-100%, 0%, 100%, 200%
+
